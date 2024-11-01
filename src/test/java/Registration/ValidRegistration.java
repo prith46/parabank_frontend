@@ -1,24 +1,22 @@
 package Registration;
 
+import BaseSuite.BaseTestSuite;
 import ObjectRepository.RegistrationPageFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class ValidRegistration {
+public class ValidRegistration extends BaseTestSuite {
 
-    public WebDriver driver;
+    WebDriver driver;
 
     @BeforeClass
     public void beforeClass(){
-        driver = new ChromeDriver();
+        driver = BaseTestSuite.getDriver();
         driver.get("https://parabank.parasoft.com/parabank/register.htm");
-        driver.manage().window().maximize();
     }
 
     @Test
@@ -40,10 +38,5 @@ public class ValidRegistration {
         WebElement userName = driver.findElement(By.tagName("h1"));
         String loginName = userName.getText();
         Assert.assertEquals(loginName, "Welcome tedfmosbyist");
-    }
-
-    @AfterClass
-    public void afterClass(){
-        driver.quit();
     }
 }

@@ -1,26 +1,22 @@
 package Registration;
 
+import BaseSuite.BaseTestSuite;
 import ObjectRepository.RegistrationPageFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class InvalidRegistration {
+public class InvalidRegistration extends BaseTestSuite {
 
-    public WebDriver driver;
     RegistrationPageFactory registration;
+    WebDriver driver = BaseTestSuite.getDriver();
 
     @BeforeClass
-    public void beforeClass(){
-        driver = new ChromeDriver();
-//        driver.get("https://parabank.parasoft.com/parabank/register.htm");
-        driver.manage().window().maximize();
+    public void beforeClass() {
         registration = new RegistrationPageFactory(driver);
     }
 
@@ -91,8 +87,4 @@ public class InvalidRegistration {
         Assert.assertEquals(loginName, "Welcome t^^edfmosbyist");
     }
 
-    @AfterClass
-    public void afterClass(){
-        driver.quit();
-    }
 }
