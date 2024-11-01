@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Para bank Frontend Testing">
+    <test name="Registration Test">
+        <classes>
+            <class name="Registration.ValidRegistration"/>
+            <class name="Registration.InvalidRegistration"/>
+        </classes>
+    </test>
+</suite>
