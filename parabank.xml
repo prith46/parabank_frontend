@@ -2,9 +2,15 @@
 <suite name="Para bank Frontend Testing">
     <test name="Registration Test">
         <classes>
-            <class name="BaseSuite.BaseTestSuite"/>
             <class name="Registration.ValidRegistration"/>
             <class name="Registration.InvalidRegistration"/>
+        </classes>
+    </test>
+    <test name="Login Test">
+        <classes>
+            <class name="Login.ValidLogin"/>
+            <class name="Login.InvalidLogin"/>
+            <class name="Login.ForgotPassword"/>
         </classes>
     </test>
 </suite>

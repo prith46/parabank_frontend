@@ -85,6 +85,9 @@ public class InvalidRegistration extends BaseTestSuite {
         WebElement userName = driver.findElement(By.tagName("h1"));
         String loginName = userName.getText();
         Assert.assertEquals(loginName, "Welcome t^^edfmosbyist");
+
+        // Logout
+        driver.findElement(By.xpath("//a[text()='Log Out']")).click();
     }
 
 }
