@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class InvalidLogin extends BaseTestSuite{
 
     WebDriver driver;
@@ -28,10 +30,16 @@ public class InvalidLogin extends BaseTestSuite{
         login.clickLoginButton();
 
         WebElement loginError = driver.findElement(By.className("error"));
-        Assert.assertEquals(loginError.getText(), "An internal error has occurred and has been logged.");
+        Assert.assertEquals(loginError.getText(), "The username and password could not be verified.");
 
-        // Logout
-        driver.findElement(By.xpath("//a[text()='Log Out']")).click();
+        // In some testcases, even after providing invalid login credentials the application is logging in. The testcase will fail but if it is going inside, the following testcases will fail. So I'm using this logout code to make sure it doesn't affect the other testcases.
+        List<WebElement> logoutButton = driver.findElements(By.xpath("//a[text()='Log Out']"));
+        if (!logoutButton.isEmpty()) {
+            logoutButton.get(0).click();
+        } else {
+            System.out.println("Logout button is not displayed.");
+        }
+
     }
 
     @Test

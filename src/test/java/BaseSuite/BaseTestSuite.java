@@ -21,7 +21,7 @@ public class BaseTestSuite {
 
     @AfterSuite
     public void afterSuite(){
-        driver.quit();
+//        driver.quit();
     }
 
 }

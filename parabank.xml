@@ -13,4 +13,9 @@
             <class name="Login.ForgotPassword"/>
         </classes>
     </test>
+    <test name="Open New Account">
+        <classes>
+            <class name="OpenNewAccount.OpenCheckingAccount"/>
+        </classes>
+    </test>
 </suite>
