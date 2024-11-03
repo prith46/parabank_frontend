@@ -24,7 +24,7 @@ public class ValidLogin extends BaseTestSuite {
 
     @Test
     public void testValidLogin(){
-        login.setUserName("tedfmosbyist");
+        login.setUserName("teddmosby");
         login.setPassWord("abc");
         login.clickLoginButton();
 

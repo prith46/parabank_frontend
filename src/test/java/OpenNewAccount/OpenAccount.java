@@ -8,17 +8,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class OpenCheckingAccount extends BaseTestSuite{
+public class OpenAccount extends BaseTestSuite{
 
-    private static final Logger log = LoggerFactory.getLogger(OpenCheckingAccount.class);
     WebDriver driver;
     OpenNewAccountFactory openAccount;
 
@@ -26,21 +24,18 @@ public class OpenCheckingAccount extends BaseTestSuite{
     public void beforeClass(){
         driver = BaseTestSuite.getDriver();
         openAccount = new OpenNewAccountFactory(driver);
-    }
-
-    @Test
-    public void testOpenCheckingAccount() throws InterruptedException {
-
         driver.get("https://parabank.parasoft.com/parabank/index.htm");
-
         LoginPageFactory login = new LoginPageFactory(driver);
-        login.setUserName("tedfmosbyist");
+        login.setUserName("teddmosby");
         login.setPassWord("abc");
         login.clickLoginButton();
+    }
+
+    public void testOpenAccount(String accountType) throws InterruptedException {
 
         driver.findElement(By.xpath("//a[@href='openaccount.htm']")).click();
 
-        openAccount.clickAccountType("checking");
+        openAccount.clickAccountType(accountType);
         Thread.sleep(1000);
         openAccount.clickNewAccountButton();
 
@@ -59,5 +54,20 @@ public class OpenCheckingAccount extends BaseTestSuite{
 
         Assert.assertEquals(accountId.getText(), accountNumber);
         Assert.assertEquals(accountBalance.getText(), "$100.00");
+    }
+
+    @Test
+    public void testOpenCheckingAccount() throws InterruptedException {
+        testOpenAccount("checking");
+    }
+
+    @Test
+    public void testOpenSavingsAccount() throws InterruptedException {
+        testOpenAccount("savings");
+    }
+
+    @AfterClass
+    public void afterClass(){
+        driver.findElement(By.xpath("//a[text()='Log Out']")).click();
     }
 }

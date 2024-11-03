@@ -30,14 +30,14 @@ public class ValidRegistration extends BaseTestSuite {
         registration.setZipCode("567567");
         registration.setPhoneNumber("12345");
         registration.setSsn("54321");
-        registration.setUserName("tedfmosbyist");
+        registration.setUserName("teddmosby");
         registration.setPassword("abc");
         registration.setConfirmPassword("abc");
         registration.clickRegister();
 
         WebElement userName = driver.findElement(By.tagName("h1"));
         String loginName = userName.getText();
-        Assert.assertEquals(loginName, "Welcome tedfmosbyist");
+        Assert.assertEquals(loginName, "Welcome teddmosby");
 
         // Logout
         driver.findElement(By.xpath("//a[text()='Log Out']")).click();

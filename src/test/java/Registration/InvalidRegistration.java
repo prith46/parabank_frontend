@@ -57,7 +57,7 @@ public class InvalidRegistration extends BaseTestSuite {
         registration.setZipCode("567567");
         registration.setPhoneNumber("12345");
         registration.setSsn("54321");
-        registration.setUserName("tedfmosbyist");
+        registration.setUserName("teddmosby");
         registration.setPassword("abc");
         registration.setConfirmPassword("abc");
         registration.clickRegister();

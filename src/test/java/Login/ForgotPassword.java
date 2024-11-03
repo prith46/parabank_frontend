@@ -34,7 +34,7 @@ public class ForgotPassword {
 
         WebElement loginDetails = driver.findElement(By.xpath("//div[@id='rightPanel']//p[2]"));
 
-        Assert.assertEquals(loginDetails.getText(), "Username: tedfmosbyist\n" +
+        Assert.assertEquals(loginDetails.getText(), "Username: teddmosby\n" +
                 "Password: abc");
 
         // Logout

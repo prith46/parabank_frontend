@@ -15,7 +15,12 @@
     </test>
     <test name="Open New Account">
         <classes>
-            <class name="OpenNewAccount.OpenCheckingAccount"/>
+            <class name="OpenNewAccount.OpenAccount"/>
+        </classes>
+    </test>
+    <test name="Request Loan">
+        <classes>
+            <class name="RequestLoan.ValidRequestLoan"/>
         </classes>
     </test>
 </suite>
