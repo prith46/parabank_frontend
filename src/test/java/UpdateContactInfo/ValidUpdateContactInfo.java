@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class ValidUpdateContactInfo {
+public class ValidUpdateContactInfo extends BaseTestSuite{
     WebDriver driver;
     RegistrationPageFactory update;
     WebDriverWait wait;
@@ -43,7 +43,7 @@ public class ValidUpdateContactInfo {
 
     public void testUpdateContactTemplate(String firsName, String lastName, String address, String city, String state, String zipCode, String phoneNumber) throws InterruptedException {
 
-        Thread.sleep(1000);
+        Thread.sleep(1500);
         update.setFirstName(firsName);
         update.setLastName(lastName);
         update.setAddress(address);
@@ -51,6 +51,7 @@ public class ValidUpdateContactInfo {
         update.setState(state);
         update.setZipCode(zipCode);
         update.setPhoneNumber(phoneNumber);
+        Thread.sleep(500);
         updateProfileButton.click();
 
         WebElement message = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='updateProfileResult']//p")));
