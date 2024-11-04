@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -58,5 +59,12 @@ public class ValidRequestLoan extends BaseTestSuite{
         WebElement loanAccountNumber = driver.findElement(By.xpath("//a[@id='newAccountId']"));
         boolean isAccountNumberVisible = loanAccountNumber.isDisplayed();
         Assert.assertTrue(isAccountNumberVisible);
+        System.out.println(loanAccountNumber.getText());
+    }
+
+    @AfterClass
+    public void afterClass(){
+        // Logout
+        driver.findElement(By.xpath("//a[text()='Log Out']")).click();
     }
 }
