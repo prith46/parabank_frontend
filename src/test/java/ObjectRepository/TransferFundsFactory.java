@@ -15,6 +15,9 @@ public class TransferFundsFactory {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(partialLinkText = "Transfer")
+    WebElement transferFundPage;
+
     @FindBy(xpath = "//input[@id='amount']")
     WebElement amount;
 
@@ -43,5 +46,9 @@ public class TransferFundsFactory {
 
     public void clickTransferButton(){
         transferButton.click();
+    }
+
+    public void clickTransferFundPage(){
+        transferFundPage.click();
     }
 }

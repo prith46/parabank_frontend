@@ -56,7 +56,7 @@ public class InvalidRequestLoan {
         Assert.assertEquals(status.getText(), "Denied");
 
         WebElement errorMessage = driver.findElement(By.xpath("//p[@class='error']"));
-        Assert.assertEquals(errorMessage.getText(), "We cannot grant a loan in that amount with your available funds.");
+        Assert.assertEquals(errorMessage.getText(), "We cannot grant a loan in that amount with your available funds and down payment.");
     }
 
     @Test
