@@ -111,6 +111,28 @@ public class TransferFund {
         Assert.assertEquals(transferError.getText(), "An internal error has occurred and has been logged.");
     }
 
+    @Test
+    public void testTransferSameAccount() throws InterruptedException {
+        transfer.clickTransferFundPage();
+        Thread.sleep(1000);
+        transfer.setAmount("10");
+        transfer.setFromAccount(fromAccount);
+        transfer.setToAccount(fromAccount);
+        transfer.clickTransferButton();
+
+        WebElement resultH1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='showResult']/h1[@class='title']")));
+        Assert.assertEquals(resultH1.getText(), "Transfer Complete!");
+
+        WebElement resultAmount = driver.findElement(By.xpath("//span[@id='amountResult']"));
+        Assert.assertEquals(resultAmount.getText(), "$10.00");
+
+        WebElement fromResult = driver.findElement(By.xpath("//span[@id='fromAccountIdResult']"));
+        Assert.assertEquals(fromResult.getText(), fromAccount);
+
+        WebElement toResult = driver.findElement(By.xpath("//span[@id='toAccountIdResult']"));
+        Assert.assertEquals(toResult.getText(), fromAccount);
+    }
+
     @AfterClass
     public void afterClass(){
         // Logout

@@ -40,4 +40,10 @@
             <class name="UpdateContactInfo.InvalidUpdateContactInfo"/>
         </classes>
     </test>
+    <test name="Bill Pay">
+        <classes>
+            <class name="BillPay.InvalidBillPay"/>
+            <class name="BillPay.ValidBillPay"/>
+        </classes>
+    </test>
 </suite>
