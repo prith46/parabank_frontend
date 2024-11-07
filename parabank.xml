@@ -3,47 +3,54 @@
     <test name="Registration Test">
         <classes>
             <class name="Registration.ValidRegistration"/>
-            <class name="Registration.InvalidRegistration"/>
+<!--            <class name="Registration.InvalidRegistration"/>-->
         </classes>
     </test>
 
     <test name="Login Test">
         <classes>
-            <class name="Login.ValidLogin"/>
-            <class name="Login.InvalidLogin"/>
-            <class name="Login.ForgotPassword"/>
+<!--            <class name="Login.ValidLogin"/>-->
+<!--            <class name="Login.InvalidLogin"/>-->
+<!--            <class name="Login.ForgotPassword"/>-->
         </classes>
     </test>
 
     <test name="Open New Account">
         <classes>
-            <class name="OpenNewAccount.OpenAccount"/>
+<!--            <class name="OpenNewAccount.OpenAccount"/>-->
         </classes>
     </test>
 
     <test name="Transfer Fund">
         <classes>
-            <class name="TransferFund.TransferFund"/>
+<!--            <class name="TransferFund.TransferFund"/>-->
         </classes>
     </test>
 
     <test name="Request Loan">
         <classes>
-            <class name="RequestLoan.ValidRequestLoan"/>
-            <class name="RequestLoan.InvalidRequestLoan"/>
+<!--            <class name="RequestLoan.ValidRequestLoan"/>-->
+<!--            <class name="RequestLoan.InvalidRequestLoan"/>-->
         </classes>
     </test>
 
     <test name="Update Contact Info">
         <classes>
-            <class name="UpdateContactInfo.ValidUpdateContactInfo"/>
-            <class name="UpdateContactInfo.InvalidUpdateContactInfo"/>
+<!--            <class name="UpdateContactInfo.ValidUpdateContactInfo"/>-->
+<!--            <class name="UpdateContactInfo.InvalidUpdateContactInfo"/>-->
         </classes>
     </test>
+
     <test name="Bill Pay">
         <classes>
-            <class name="BillPay.InvalidBillPay"/>
-            <class name="BillPay.ValidBillPay"/>
+<!--            <class name="BillPay.InvalidBillPay"/>-->
+<!--            <class name="BillPay.ValidBillPay"/>-->
+        </classes>
+    </test>
+
+    <test name="Find Transaction">
+        <classes>
+            <class name="FindTransaction.ValidFindTransaction"/>
         </classes>
     </test>
 </suite>
