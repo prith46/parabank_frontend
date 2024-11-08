@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -59,5 +60,11 @@ public class InvalidBillPay extends BaseTestSuite {
 
         WebElement payeePhoneError = driver.findElement(By.xpath("//span[@id='validationModel-phoneNumber']"));
         Assert.assertEquals(payeePhoneError.getText(), "Phone number is required.");
+    }
+
+    @AfterClass
+    public void afterClass(){
+        // Logout
+        driver.findElement(By.xpath("//a[text()='Log Out']")).click();
     }
 }

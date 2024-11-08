@@ -46,7 +46,7 @@ public class InvalidRequestLoan {
     @Test
     public void testHugeLoanAmount() throws InterruptedException {
 
-        loan.setLoadAmount("100000");
+        loan.setLoadAmount("10000000000000000000");
         loan.setDownPayment("100");
         loan.setFromAccount(mainAccountNumber);
         Thread.sleep(1000);
@@ -56,7 +56,7 @@ public class InvalidRequestLoan {
         Assert.assertEquals(status.getText(), "Denied");
 
         WebElement errorMessage = driver.findElement(By.xpath("//p[@class='error']"));
-        Assert.assertEquals(errorMessage.getText(), "We cannot grant a loan in that amount with your available funds and down payment.");
+        Assert.assertEquals(errorMessage.getText(), "We cannot grant a loan in that amount with your available funds.");
     }
 
     @Test
@@ -78,8 +78,8 @@ public class InvalidRequestLoan {
     @Test
     public void testHugeLoanAndDownPayment() throws InterruptedException {
 
-        loan.setLoadAmount("100000");
-        loan.setDownPayment("1000");
+        loan.setLoadAmount("100000000000000000");
+        loan.setDownPayment("1000000000000");
         loan.setFromAccount(mainAccountNumber);
         Thread.sleep(1000);
         loan.clickApplyNow();

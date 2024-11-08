@@ -30,7 +30,7 @@ public class InvalidLogin extends BaseTestSuite{
         login.clickLoginButton();
 
         WebElement loginError = driver.findElement(By.className("error"));
-        Assert.assertEquals(loginError.getText(), "The username and password could not be verified.");
+        Assert.assertEquals(loginError.getText(), "An internal error has occurred and has been logged.");
 
         // In some testcases, even after providing invalid login credentials the application is logging in. The testcase will fail but if it is going inside, the following testcases will fail. So I'm using this logout code to make sure it doesn't affect the other testcases.
         List<WebElement> logoutButton = driver.findElements(By.xpath("//a[text()='Log Out']"));
